@@ -6,15 +6,15 @@ spec:
   designerFlowsOperationMode: disabled
   license:
     accept: true
-    license: L-KSBM-C37J2R
-    use: CloudPakForIntegrationNonProduction
+    license: L-APEH-C9NCK6
+    use: CloudPakForIntegrationProduction
   replicas: 1
   router:
     timeout: 120s
   service:
     endpointType: http
   useCommonServices: true
-  version: 12.0.1.0-r3
+  version: 12.0.4.0-r1
   adminServerSecure: true
   pod:
     containers:
