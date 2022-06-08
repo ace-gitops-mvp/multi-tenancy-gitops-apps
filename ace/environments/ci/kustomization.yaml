@@ -55,7 +55,7 @@ resources:
  - tasks/github-open-pr.yaml
 # - tasks/gitops-ace.yaml
  - tasks/ibm-gitops-for-ace-task.yaml
-# - tasks/ibm-jmeter-performance-test.yaml
+ - tasks/ibm-jmeter-performance-test.yaml
  - tasks/resolve-props.yaml
  - triggerbindings/ace-integration-server.yaml
  - triggertemplates/ace-integration-server.yaml
