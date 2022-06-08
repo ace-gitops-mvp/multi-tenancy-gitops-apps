@@ -4,7 +4,7 @@ metadata:
   name: ace-promote-dev-stage
 spec:
   params:
-  - default: git@github.com:prod-reference-guide/create-customer.git
+  - default: git@github.com:ace-gitops-mvp/create-customer.git
     name: is-source-repo-url
     type: string
   - default: is-source
