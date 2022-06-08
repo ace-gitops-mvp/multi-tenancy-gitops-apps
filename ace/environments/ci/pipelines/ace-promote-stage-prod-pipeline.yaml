@@ -6,7 +6,7 @@ metadata:
     app.openshift.io/runtime: test
 spec:
   params:
-    - default: https://github.com/cloud-native-toolkit-demos/ace-customer-details.git
+    - default: git@github.com:ace-gitops-mvp/create-customer.git
       name: is-source-repo-url
       type: string
     - default: is-source
@@ -33,20 +33,20 @@ spec:
   tasks:
     - name: clone-is-source
       params:
-      - name: url
-        value: $(params.is-source-repo-url)
-      - name: subdirectory
-        value: $(params.is-source-directory)
-      - name: deleteExisting
-        value: "true"
-      - name: sshPrivateKey
-        value: $(params.is-source-repo-private-key)
+        - name: url
+          value: $(params.is-source-repo-url)
+        - name: subdirectory
+          value: is-source
+        - name: deleteExisting
+          value: "true"
       taskRef:
-        kind: Task
+        kind: ClusterTask
         name: git-clone
       workspaces:
-      - name: output
-        workspace: shared-workspace
+        - name: output
+          workspace: shared-workspace
+        - name: ssh-directory
+          workspace: ace-source-repo-secret
 
     - name: resolve-props
       params:
@@ -93,3 +93,4 @@ spec:
 
   workspaces:
   - name: shared-workspace
+  - name: ace-source-repo-secret
